@@ -34,8 +34,7 @@ public class CategoriaController {
     }
 
     @PostMapping("/guardar")
-    public String categoriaGuardar(Categoria categoria,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {
+    public String categoriaGuardar(Categoria categoria) {
         categoriaService.save(categoria);
         return "redirect:/categoria/listado";
     }

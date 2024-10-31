@@ -22,7 +22,7 @@ public class MedicamentoController {
 
     @GetMapping("/listado")
     public String inicio(Model model) {
-        var medicamentos = medicamentoService.getMedicamentos(false);
+        var medicamentos = medicamentoService.getMedicamentos();
         model.addAttribute("medicamentos", medicamentos);
         model.addAttribute("totalMedicamentos", medicamentos.size());
         return "/medicamento/listado";
@@ -34,8 +34,7 @@ public class MedicamentoController {
     }
 
     @PostMapping("/guardar")
-    public String medicamentoGuardar(Medicamento medicamento,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {
+    public String medicamentoGuardar(Medicamento medicamento) {
         medicamentoService.save(medicamento);
         return "redirect:/medicamento/listado";
     }

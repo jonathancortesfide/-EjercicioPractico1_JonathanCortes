@@ -16,7 +16,7 @@ public class MedicamentoServiceImpl implements MedicamentoService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<Medicamento> getMedicamentos(boolean activos) {
+    public List<Medicamento> getMedicamentos() {
         var lista = medicamentoDao.findAll();
         return lista;
     }

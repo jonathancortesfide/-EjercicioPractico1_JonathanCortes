@@ -6,7 +6,7 @@ import java.util.List;
 public interface MedicamentoService {
     
     // Se obtiene un listado de medicamentos en un List
-    public List<Medicamento> getMedicamentos(boolean activos);
+    public List<Medicamento> getMedicamentos();
     
     // Get a Category, based on the ID of a category
     public Medicamento getMedicamento(Medicamento medicamento);
